@@ -1,0 +1,21 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: gy
+  profiles:
+    active: dev
+  datasource:
+    username: sa
+    password: root
+    url: jdbc:sqlserver://192.168.16.105:1433;DatabaseName=nfhis
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+mybatis:
+    type-aliases-package: com.stopec.gy
+    mapper-locations: classpath:mybatis/mapper/*Mapper.xml
+logging:
+  config: classpath:logback-spring.xml
+
+
