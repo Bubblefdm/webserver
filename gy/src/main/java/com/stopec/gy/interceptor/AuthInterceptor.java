@@ -17,9 +17,9 @@ import java.util.List;
 
 
 public class AuthInterceptor extends AbstractPhaseInterceptor<SoapMessage> {
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public AuthInterceptor() {
         //定义在哪个阶段进行拦截

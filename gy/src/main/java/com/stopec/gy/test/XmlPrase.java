@@ -1,8 +1,12 @@
 package com.stopec.gy.test;
 
+
 import com.stopec.gy.pojo.req.order.Inputxml001;
-import com.stopec.gy.pojo.res.order.Disease;
 import com.stopec.gy.utils.XMLUtils;
+import org.apache.cxf.endpoint.Client;
+import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
+
+import javax.xml.namespace.QName;
 
 public class XmlPrase {
     public static void main(String[] args) {
@@ -17,11 +21,25 @@ public class XmlPrase {
                 "    </inidentity>\n" +
                 "<inbusinesscontent>\n" +
                 "   <aac002>身份证号码(社会保障号码)</aac002>\n" +
-                "<aac001>个人编号</aac001> \n" +
+                "<aac001>7</aac001> \n" +
                 "</inbusinesscontent>\n" +
                 "</input>\n";
-        Inputxml001 inputxml001 = XMLUtils.convertXml2Object(xml, Inputxml001.class);
-        System.out.println(inputxml001.getInidentity().getVersion());
+
+//        采用动态工厂方式 不需要指定服务接口
+        JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
+        Client client = dcf.createClient("http://localhost:8090/services/orderService?wsdl");
+        Object[] result = null;
+        try {
+            //如果有命名空间的话
+            QName operationName = new QName("http://service.webservice.gy.stopec.com/", "getOrderDetails"); //如果有命名空间需要加上这个，第一个参数为命名空间名称，第二个参数为WebService方法名称
+            result = client.invoke(operationName, xml);//后面为WebService请求参数数组
+            //如果没有命名空间的话
+        } catch (Exception e) {
+            String errMsg = "WebService发生异常！";
+            result = new Object[]{errMsg};
+            e.printStackTrace();
+        }
+        System.out.println(result[0]);
 
 
 

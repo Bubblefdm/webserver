@@ -8,6 +8,8 @@ public class Inputxml001 {
 
     @XmlElement(name = "inidentity")
     private Inidentity inidentity;
+    @XmlElement(name = "inbusinesscontent")
+    private Inbusinesscontent inbusinesscontent;
 
     @XmlTransient
     public Inidentity getInidentity() {
@@ -17,6 +19,7 @@ public class Inputxml001 {
     public void setInidentity(Inidentity inidentity) {
         this.inidentity = inidentity;
     }
+
     @XmlTransient
     public Inbusinesscontent getInbusinesscontent() {
         return inbusinesscontent;
@@ -25,8 +28,5 @@ public class Inputxml001 {
     public void setInbusinesscontent(Inbusinesscontent inbusinesscontent) {
         this.inbusinesscontent = inbusinesscontent;
     }
-
-    @XmlElement(name = "inbusinesscontent")
-    private Inbusinesscontent inbusinesscontent;
 
 }
