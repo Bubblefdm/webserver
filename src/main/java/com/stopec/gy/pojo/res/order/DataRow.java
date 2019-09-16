@@ -3,7 +3,7 @@ package com.stopec.gy.pojo.res.order;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-public class Disease {
+public class DataRow {
     @XmlElement(name = "row")
     private Row row;
 

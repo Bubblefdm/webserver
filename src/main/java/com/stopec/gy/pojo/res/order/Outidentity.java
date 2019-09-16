@@ -3,15 +3,16 @@ package com.stopec.gy.pojo.res.order;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-public  class Outidentity {
+public class Outidentity {
     @XmlElement(name = "returnid")
-    private String returnid;//返回编号	not null	varchar(6)	正确返回0，错误返回-1
+    public String returnid;
+
     @XmlElement(name = "returnmsg")
-    private String returnmsg;//错误信息文本		varchar(1000)	正确为空，错误填写错误原因。
+    public String returnmsg;
 
     @XmlTransient
     public String getReturnid() {
-        return returnid;
+        return this.returnid;
     }
 
     public void setReturnid(String returnid) {
@@ -20,7 +21,7 @@ public  class Outidentity {
 
     @XmlTransient
     public String getReturnmsg() {
-        return returnmsg;
+        return this.returnmsg;
     }
 
     public void setReturnmsg(String returnmsg) {

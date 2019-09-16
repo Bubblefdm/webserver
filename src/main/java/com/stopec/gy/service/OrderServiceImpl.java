@@ -1,12 +1,10 @@
 package com.stopec.gy.service;
 
-import com.stopec.gy.mybatis.Dao.getOrderDetailsMapper;
 import com.stopec.gy.pojo.req.order.Inputxml001;
 import com.stopec.gy.utils.XMLUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.jws.WebService;
@@ -21,8 +19,6 @@ public class OrderServiceImpl implements OrderService {
 
     private Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
 
-    @Autowired
-    private getOrderDetailsMapper  getOrderDetailsMapper;
 
     @Override
     public String getOrderDetails(String input) {
@@ -35,8 +31,8 @@ public class OrderServiceImpl implements OrderService {
         String baa008 = inputxml001.getInidentity().getBaa008();
         String baa010 = inputxml001.getInidentity().getBaa010();
         logger.info(inputxml001.getInbusinesscontent().getAac001());
-        String order = getOrderDetailsMapper.getOrder(aac001);
-        System.out.println(order);
-        return order;
+//        String order = getOrderDetailsMapper.getOrder(aac001);
+//        System.out.println(order);
+        return "";
     }
 }

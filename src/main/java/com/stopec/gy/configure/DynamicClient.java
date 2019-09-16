@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.xml.ws.Endpoint;
 
@@ -36,6 +38,17 @@ public class DynamicClient {
 //        //client.getOutInterceptors().add(new AuthInterceptor(dynamicConfigure.getUsername(), dynamicConfigure.getPassword()));
 //        return client;
 //    }
+
+    @Bean
+    public ServletRegistrationBean dispatcherRestServlet() {
+        AnnotationConfigWebApplicationContext context
+                = new AnnotationConfigWebApplicationContext();
+        //替换成自己想买的controller包路径
+        context.scan("com.stopec.gy.contoller");
+        DispatcherServlet disp = new DispatcherServlet(context);
+        ServletRegistrationBean registrationBean = new ServletRegistrationBean(disp, "/web/*");
+        return registrationBean;
+    }
 
     @Bean
     public ServletRegistrationBean dispatcherServlet() {

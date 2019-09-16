@@ -1,14 +1,17 @@
-package com.stopec.gy.pojo.req.order;
+package com.stopec.gy.pojo.req.pay;
 
-import javax.xml.bind.annotation.*;
+import com.stopec.gy.pojo.req.order.Inbusinesscontent;
+import com.stopec.gy.pojo.req.order.Inidentity;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement(name = "input")
-public class Inputxml001 {
-
+public class Inputxml002 {
     @XmlElement(name = "inidentity")
     private Inidentity inidentity;
     @XmlElement(name = "inbusinesscontent")
-    private Inbusinesscontent inbusinesscontent;
+    private com.stopec.gy.pojo.req.order.Inbusinesscontent inbusinesscontent;
 
     @XmlTransient
     public Inidentity getInidentity() {
@@ -27,5 +30,4 @@ public class Inputxml001 {
     public void setInbusinesscontent(Inbusinesscontent inbusinesscontent) {
         this.inbusinesscontent = inbusinesscontent;
     }
-
 }

@@ -1,6 +1,4 @@
 package com.stopec.gy.utils;
-
-import com.stopec.gy.pojo.res.order.outputxml001;
 import org.springframework.util.StringUtils;
 
 import javax.xml.bind.JAXBContext;
@@ -134,76 +132,5 @@ public class XMLUtils {
     public static class CollectionWrapper {
         @XmlAnyElement
         protected Collection collection;
-    }
-
-    /**
-     * 输出xml
-     */
-    public static String   outxml( outputxml001 pojo){
-        String xml = "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n" +
-                "<output>\n" +
-                "   <outidentity>\n" +
-                "       <returnid>"+pojo.getReturnid()+"</returnid>\n" +
-                "       <returnmsg>"+pojo.getReturnmsg()+"</returnmsg>\n" +
-                "   </outidentity>\n" +
-                "   <outbusinesscontent>\n" +
-                "       <hisOrderId>"+pojo.getHisOrderId()+"</hisOrderId>\n" +
-                "       <aac003>"+pojo.getAac003()+"</aac003> \n" +
-                "       <aac002>"+pojo.getAac002()+"</aac002>\n" +
-                "       <aka130>"+pojo.getAka130()+"</aka130> \n" +
-                "       <akc193>"+pojo.getAkc193()+"</akc193>\n" +
-                "       <bkc020>"+pojo.getBkc020()+"</bkc020> \n" +
-                "       <disease>\n" +
-                "           <row>\n" +
-                "               <bkc014>"+pojo.getBkc014()+"</bkc014>\n" +
-                "               <bkc117>"+pojo.getBkc117()+"</bkc117> \n" +
-                "           </row>\n" +
-                "       </disease>\n" +
-                "       <bkc131>"+pojo.getBkc131()+"</bkc131> \n" +
-                "       <aae030>"+pojo.getAae030()+"</aae030> \n" +
-                "       <nums>"+pojo.getNums()+"</nums>\n"+
-                "       <datarow>\n" +
-                "           <row>\n" +
-                "               <bke019>"+pojo.getBke019()+"</bke019>\n" +
-                "               <bke030>"+pojo.getBke030()+"</bke030> \n" +
-                "               <ake001>"+pojo.getAke001()+"</ake001>\n" +
-                "               <ake002>"+pojo.getAke002()+"</ake002> \n" +
-                "               <bke026>"+pojo.getBke026()+"</bke026>\n" +
-                "               <bke027>"+pojo.getBke027()+"</bke027> \n" +
-                "               <aka074_yn>"+pojo.getAka074_yn()+"</aka074_yn>\n" +
-                "               <aka070_yn>"+pojo.getAka070_yn()+"</aka070_yn> \n" +
-                "               <aka067_yn>"+pojo.getAka067_yn()+"</aka067_yn>\n" +
-                "               <aka067>"+pojo.getAka067()+"</aka067>\n" +
-                "               <akc226>"+pojo.getAkc226()+"</akc226>\n" +
-                "               <akc225>"+pojo.getAkc225()+"</akc225>\n" +
-                "               <akc264>"+pojo.getAkc264()+"</akc264>\n" +
-                "               <bkc048>"+pojo.getBkc048()+"</bkc048>\n" +
-                "               <bkc049>"+pojo.getBkc049()+"</bkc049>\n" +
-                "               <aaz307>"+pojo.getAaz307()+"</aaz307>\n" +
-                "               <aae386>"+pojo.getAae386()+"</aae386>\n" +
-                "               <bkc045>"+pojo.getBkc045()+"</bkc045> \n" +
-                "               <bkc044>"+pojo.getBkc044()+"</bkc044> \n" +
-                "               <aka074>"+pojo.getAka074()+"</aka074>\n" +
-                "               <yke112>"+pojo.getYke112()+"</yke112>\n" +
-                "               <aae072>"+pojo.getAae072()+"</aae072>\n" +
-                "               <aka017>"+pojo.getAka017()+"</aka017>\n" +
-                "               <yke330>"+pojo.getYke330()+"</yke330>\n" +
-                "               <xzyyspbz>"+pojo.getXzyyspbz()+"</xzyyspbz>\n" +
-                "           </row>\n" +
-                "       </datarow>\n" +
-                "       <bkc033>\n" +
-                "           <row>\n" +
-                "               <bkc022>"+pojo.getBkc022()+"</bkc022>\n" +
-                "               <akc076>"+pojo.getAkc076()+"</akc076>\n" +
-                "           </row>\n" +
-                "           <row>\n" +
-                "               <bkc022>"+pojo.getBkc020()+"</bkc022>\n" +
-                "               <akc076>"+pojo.getAkc076()+"</akc076>\n" +
-                "           </row>\n" +
-                "       </bkc033>\n" +
-                "   </outbusinesscontent>\n" +
-                "</output>\n";
-
-        return  xml;
     }
 }
