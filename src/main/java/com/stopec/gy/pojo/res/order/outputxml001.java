@@ -39,7 +39,7 @@ public class outputxml001 {
     private String aaz307;//	科室编码	见备注	varchar(30)	药店购药时，可不传。其它结算类别必传。
     private String  aae386;//	科室名称	见备注	varchar(150)	药店购药时，可不传。其它结算类别必传。
     private int ake003;//医保项目分类	not null	number(6)
-    private String bke022;//	门诊诊断编码	见备注	varchar(20)	药店购药时，可不传。其它结算类别必传。
+    private String bkc022;//	门诊诊断编码	见备注	varchar(20)	药店购药时，可不传。其它结算类别必传。
     private String akc076;//	门诊诊断名称	见备注	varchar(20)	药店购药时，可不传。其它结算类别必传。
     private String yke112;//	医嘱记录序号	null	varchar(20)	非药品医嘱可不填
     private String aae072;//	单据号	null	varchar(20)
@@ -327,12 +327,12 @@ public class outputxml001 {
         this.ake003 = ake003;
     }
 
-    public String getBke022() {
-        return bke022;
+    public String getBkc022() {
+        return bkc022;
     }
 
-    public void setBke022(String bke022) {
-        this.bke022 = bke022;
+    public void setBkc022(String bke022) {
+        this.bkc022 = bkc022;
     }
 
     public String getAkc076() {
