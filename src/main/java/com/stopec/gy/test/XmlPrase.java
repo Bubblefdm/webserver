@@ -1,8 +1,6 @@
 package com.stopec.gy.test;
 
 
-import com.stopec.gy.pojo.req.order.Inputxml001;
-import com.stopec.gy.utils.XMLUtils;
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 
@@ -28,6 +26,7 @@ public class XmlPrase {
 //        采用动态工厂方式 不需要指定服务接口
         JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
         Client client = dcf.createClient("http://localhost:8090/services/orderService?wsdl");
+        client.getOutInterceptors().add(new AddSoapHeader());
         Object[] result = null;
         try {
             //如果有命名空间的话

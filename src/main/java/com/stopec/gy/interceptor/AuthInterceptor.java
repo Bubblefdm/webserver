@@ -59,4 +59,6 @@ public class AuthInterceptor extends AbstractPhaseInterceptor<SoapMessage> {
             throw new Fault(soapExc);
         }
     }
+
+
 }
