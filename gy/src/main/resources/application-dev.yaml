@@ -1,6 +1,0 @@
-spring.dynamic:
-  url: http://127.0.0.1:7003/yhjypt/services/yinHaiBusiness?wsdl
-  namespace: http://webservice.common.yinhai.com/
-  username: gygly
-  password: 123456
-  method: callBusiness
