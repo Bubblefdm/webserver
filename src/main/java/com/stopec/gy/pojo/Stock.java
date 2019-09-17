@@ -1,7 +1,7 @@
 package com.stopec.gy.pojo;
 
-import com.stopec.gy.mybatis.handler.common.ColumnType;
 import org.apache.ibatis.type.JdbcType;
+import tk.mybatis.mapper.annotation.ColumnType;
 
 import javax.persistence.*;
 
@@ -12,7 +12,7 @@ public class Stock {
     @Column(name = "id", length = 11, columnDefinition = "主键")
     @ColumnType(jdbcType = JdbcType.INTEGER)
     private int id;
-    @Column(name = "name",length = 100)
+    @Column(name = "name", length = 100)
     private String name;
     @Column(name = "count")
     private int count;
