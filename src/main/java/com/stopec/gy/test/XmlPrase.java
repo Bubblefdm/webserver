@@ -219,7 +219,7 @@ public class XmlPrase {
             result = new Object[]{errMsg};
             e.printStackTrace();
         }
-        System.out.println(result[0]);
+        System.out.println("客户端输出"+result[0]);
 
 
     }

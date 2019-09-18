@@ -6,7 +6,7 @@ spring.dynamic:
   method: callBusiness
 jdbc:
   driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-  url: jdbc:sqlserver://192.168.16.105:1433;DatabaseName=nfhis
+  url: jdbc:sqlserver://127.0.0.1:1433;DatabaseName=nfhis
   username: sa
   password: root
   DB_MAXCONN: 10
