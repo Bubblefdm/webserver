@@ -207,6 +207,7 @@ public class XmlPrase {
 
         JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
         Client client = dcf.createClient("http://localhost:8090/services/orderService?wsdl");
+        client.getOutInterceptors().add(new AddSoapHeader());
         Object[] result = null;
         try {
             //如果有命名空间的话
