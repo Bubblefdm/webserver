@@ -83,19 +83,20 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.8.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/sqljdbc4 -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.44</version>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>sqljdbc4</artifactId>
+            <version>4.0</version>
         </dependency>
 
     </dependencies>
-    <!--    <repositories>-->
-    <!--        <repository>-->
-    <!--            <id>clojars</id>-->
-    <!--            <url>http://clojars.org/repo/</url>-->
-    <!--        </repository>-->
-    <!--    </repositories>-->
+     <repositories>
+            <repository>
+                <id>clojars</id>
+                <url>https://clojars.org/repo/</url>
+            </repository>
+     </repositories>
 
     <build>
         <plugins>
