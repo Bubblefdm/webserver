@@ -8,8 +8,12 @@ import com.stopec.gy.pojo.res.order.Outidentity;
 import com.stopec.gy.pojo.res.order.Outputxml001;
 import com.stopec.gy.pojo.res.pay.Outputxml002;
 import com.stopec.gy.utils.XMLUtils;
+import org.apache.cxf.endpoint.Client;
+import org.apache.cxf.jaxws.endpoint.dynamic.JaxWsDynamicClientFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.xml.namespace.QName;
 
 public class XmlPrase {
 
@@ -201,20 +205,21 @@ public class XmlPrase {
 //        logger.info(outputxml0021.getInbusinesscontent().getDatarow().getRow().toString());
 
 
-//        JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
-//        Client client = dcf.createClient("http://localhost:8090/services/orderService?wsdl");
-//        Object[] result = null;
-//        try {
-//            //如果有命名空间的话
-//            QName operationName = new QName("http://service.webservice.gy.stopec.com/", "getOrderDetails"); //如果有命名空间需要加上这个，第一个参数为命名空间名称，第二个参数为WebService方法名称
-//            result = client.invoke(operationName, xml);//后面为WebService请求参数数组
-//            //如果没有命名空间的话
-//        } catch (Exception e) {
-//            String errMsg = "WebService发生异常！";
-//            result = new Object[]{errMsg};
-//            e.printStackTrace();
-//        }
-//        System.out.println(result[0]);
+        JaxWsDynamicClientFactory dcf = JaxWsDynamicClientFactory.newInstance();
+        Client client = dcf.createClient("http://localhost:8090/services/orderService?wsdl");
+        client.getOutInterceptors().add(new AddSoapHeader());
+        Object[] result = null;
+        try {
+            //如果有命名空间的话
+            QName operationName = new QName("http://service.webservice.gy.stopec.com/", "getOrderDetails"); //如果有命名空间需要加上这个，第一个参数为命名空间名称，第二个参数为WebService方法名称
+            result = client.invoke(operationName, xml);//后面为WebService请求参数数组
+            //如果没有命名空间的话
+        } catch (Exception e) {
+            String errMsg = "WebService发生异常！";
+            result = new Object[]{errMsg};
+            e.printStackTrace();
+        }
+        System.out.println(result[0]);
 
 
     }

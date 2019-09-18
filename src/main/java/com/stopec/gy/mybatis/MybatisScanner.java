@@ -11,7 +11,6 @@ import java.util.Properties;
 @Configuration
 @AutoConfigureAfter({MybatisConfig.class})
 public class MybatisScanner {
-
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();

@@ -12,7 +12,7 @@ public class Stock {
     @Column(name = "id", length = 11, columnDefinition = "主键")
     @ColumnType(jdbcType = JdbcType.INTEGER)
     private int id;
-    @Column(name = "name", length = 100)
+    @Column(name = "name",length = 100)
     private String name;
     @Column(name = "count")
     private int count;
