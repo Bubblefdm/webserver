@@ -11,6 +11,7 @@
     <groupId>gy_app</groupId>
     <artifactId>gy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
     <name>gy</name>
     <description>Demo project for Spring Boot</description>
 
@@ -86,11 +87,6 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.44</version>
-        </dependency>
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>sqljdbc4</artifactId>
-            <version>4.0</version>
         </dependency>
 
     </dependencies>
