@@ -57,8 +57,7 @@ public class MybatisConfig {
         PathMatchingResourcePatternResolver mappers = new PathMatchingResourcePatternResolver();
         Resource[] mapperResources = mappers.getResources("classpath*:/mapper/*.xml");
         fb.setMapperLocations(mapperResources);
-        fb.setTypeHandlersPackage("com.stopec.gy.pojo," +
-                "com.stopec.gy.mybatis.handler.pojo");
+        fb.setTypeHandlersPackage("com.stopec.gy.pojo");
         fb.setPlugins(new Interceptor[]{pageHelper()});
         try {
             return fb.getObject();

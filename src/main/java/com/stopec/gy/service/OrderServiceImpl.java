@@ -1,10 +1,12 @@
 package com.stopec.gy.service;
 
+import com.stopec.gy.mapper.OrderPayMapper;
 import com.stopec.gy.pojo.req.order.Inputxml001;
 import com.stopec.gy.utils.XMLUtils;
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.jws.WebService;
@@ -18,8 +20,8 @@ import javax.jws.WebService;
 public class OrderServiceImpl implements OrderService {
 
     private Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
-
-
+    @Autowired(required = false)
+    public OrderPayMapper orderPayMapper;
     @Override
     public String getOrderDetails(String input) {
         Inputxml001 inputxml001 = XMLUtils.convertXml2Object(input, Inputxml001.class);
@@ -30,9 +32,9 @@ public class OrderServiceImpl implements OrderService {
         String akb021 = inputxml001.getInidentity().getAkb021();
         String baa008 = inputxml001.getInidentity().getBaa008();
         String baa010 = inputxml001.getInidentity().getBaa010();
-        logger.info(inputxml001.getInbusinesscontent().getAac001());
-//        String order = getOrderDetailsMapper.getOrder(aac001);
-//        System.out.println(order);
-        return "";
+        System.out.println("获取的值"+aac001);
+        String order = orderPayMapper.getOrder(aac001);
+        System.out.println("服务器输出"+order);
+        return order;
     }
 }

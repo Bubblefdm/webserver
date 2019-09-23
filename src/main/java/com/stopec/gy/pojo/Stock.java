@@ -1,7 +1,7 @@
 package com.stopec.gy.pojo;
 
-import com.stopec.gy.mybatis.handler.common.ColumnType;
 import org.apache.ibatis.type.JdbcType;
+import tk.mybatis.mapper.annotation.ColumnType;
 
 import javax.persistence.*;
 

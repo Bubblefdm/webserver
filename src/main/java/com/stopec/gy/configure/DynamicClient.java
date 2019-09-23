@@ -65,19 +65,17 @@ public class DynamicClient {
     @Bean
     public Endpoint endpoint() {
         EndpointImpl immnuneendpoint = new EndpointImpl(springBus(), orderService);
-        immnuneendpoint.getOutInterceptors().add(new AuthInterceptor());//添加校验拦截器
+        immnuneendpoint.getInInterceptors().add(new AuthInterceptor());//添加校验拦截器
         immnuneendpoint.publish("/orderService");
 
 
-
         EndpointImpl immnuneendpoisnts = new EndpointImpl(springBus(), payResultService);
-        immnuneendpoisnts.getOutInterceptors().add(new AuthInterceptor());//添加校验拦截器
+        immnuneendpoisnts.getInInterceptors().add(new AuthInterceptor());//添加校验拦截器
         immnuneendpoisnts.publish("/payResultService");
 
 
         return immnuneendpoint;
     }
-
 
 
 }

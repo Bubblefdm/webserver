@@ -23,7 +23,7 @@ public class AuthInterceptor extends AbstractPhaseInterceptor<SoapMessage> {
 
     public AuthInterceptor() {
         //定义在哪个阶段进行拦截
-        super(Phase.PRE_PROTOCOL);
+        super(Phase.PRE_INVOKE);
     }
 
     @Override
